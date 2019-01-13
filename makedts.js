@@ -51,7 +51,7 @@ for (let key in API.prototype) {
     if (anotation[key]) {
         dtsfile += "    " + anotation[key] + "\n\n"
     }
-    dtsfile += "    " + `${key}:(${getParameterName(API.prototype[key]).join(",")})=>any \n\n`
+    dtsfile += "    " + `${key}:(${getParameterName(API.prototype[key]).map(param=>param+="?").join(",")})=>any \n\n`
 }
 /**替换模块描述 */
 let basefile = fs.readFileSync("./base.d.ts").toString()

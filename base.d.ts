@@ -4,7 +4,7 @@
  */
 
 declare class AccessToken {
-    constructor(accessToken, expireTime)
+    constructor(accessToken?, expireTime?)
 
     /*!
      * 检查AccessToken是否有效，检查规则为当前时间和过期时间进行对比
@@ -49,7 +49,7 @@ declare class API {
    * @param {AsyncFunction} getToken 可选的。获取全局token对象的方法，多进程模式部署时需在意
    * @param {AsyncFunction} saveToken 可选的。保存全局token对象的方法，多进程模式部署时需在意
    */
-    constructor(appid, appsecret, getToken, saveToken, tokenFromCustom)
+    constructor(appid, appsecret, getToken?, saveToken?, tokenFromCustom?)
     /**
      * 用于设置urllib的默认options * Examples:
      * ```
@@ -57,11 +57,11 @@ declare class API {
      * ```
      * @param {Object} opts 默认选项
      */
-    setOpts: (opts) => void;
+    setOpts: (opts?) => void;
     /**
      * 设置urllib的hook
      */
-    request: (url, opts, retry) => any
+    request: (url, opts?, retry?) => any
     /*!
     * 根据创建API时传入的appid和appsecret获取access token
     * 进行后续所有API调用时，需要先获取access token
