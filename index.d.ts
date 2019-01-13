@@ -1,6 +1,6 @@
 /**
  * generate by ikrong from ikrong.com
- * 2019-1-13 23:7
+ * 2019-1-13 23:14
  */
 
 declare class AccessToken {
@@ -138,7 +138,7 @@ declare class API {
     * @param {Object} menu 菜单对象 */
 
 
-    createMenu:(menu?)=>any 
+    createMenu:(menu)=>any 
 
     /**
     * 获取菜单
@@ -252,7 +252,7 @@ declare class API {
     */
 
 
-    addConditionalMenu:(menu?)=>any 
+    addConditionalMenu:(menu)=>any 
 
     /**
     * 删除个性化自定义菜单
@@ -274,7 +274,7 @@ declare class API {
     */
 
 
-    delConditionalMenu:(menuid?)=>any 
+    delConditionalMenu:(menuid)=>any 
 
     /**
     * 测试个性化自定义菜单
@@ -317,7 +317,7 @@ declare class API {
     */
 
 
-    tryConditionalMenu:(user_id?)=>any 
+    tryConditionalMenu:(user_id)=>any 
 
     /**
     * 获取分组列表
@@ -357,7 +357,7 @@ declare class API {
     */
 
 
-    getWhichGroup:(openid?)=>any 
+    getWhichGroup:(openid)=>any 
 
     /**
     * 创建分组
@@ -374,7 +374,7 @@ declare class API {
     */
 
 
-    createGroup:(name?)=>any 
+    createGroup:(name)=>any 
 
     /**
     * 更新分组名字
@@ -392,7 +392,7 @@ declare class API {
     */
 
 
-    updateGroup:(id?,name?)=>any 
+    updateGroup:(id?,name)=>any 
 
     /**
     * 移动用户进分组
@@ -410,7 +410,7 @@ declare class API {
     */
 
 
-    moveUserToGroup:(openid?,groupId?)=>any 
+    moveUserToGroup:(openid,groupId)=>any 
 
     /**
     * 批量移动用户分组
@@ -428,7 +428,7 @@ declare class API {
     */
 
 
-    moveUsersToGroup:(openids?,groupId?)=>any 
+    moveUsersToGroup:(openids,groupId)=>any 
 
     /**
     * 删除分组
@@ -445,7 +445,7 @@ declare class API {
     */
 
 
-    removeGroup:(groupId?)=>any 
+    removeGroup:(groupId)=>any 
 
     /**
     * 获取用户基本信息。可以设置lang，其中zh_CN 简体，zh_TW 繁体，en 英语。默认为en
@@ -475,7 +475,7 @@ declare class API {
     */
 
 
-    getUser:(options?)=>any 
+    getUser:(options)=>any 
 
     /**
     * 批量获取用户基本信息
@@ -513,7 +513,7 @@ declare class API {
     */
 
 
-    batchGetUsers:(openids?,lang?)=>any 
+    batchGetUsers:(openids,lang)=>any 
 
     /**
     * 获取关注者列表
@@ -539,7 +539,7 @@ declare class API {
     */
 
 
-    getFollowers:(nextOpenid?)=>any 
+    getFollowers:(nextOpenid)=>any 
 
     /**
     * 设置用户备注名
@@ -560,7 +560,7 @@ declare class API {
     */
 
 
-    updateRemark:(openid?,remark?)=>any 
+    updateRemark:(openid,remark)=>any 
 
     /**
     * 创建标签
@@ -580,7 +580,7 @@ declare class API {
     */
 
 
-    createTags:(name?)=>any 
+    createTags:(name)=>any 
 
     /**
     * 获取公众号已创建的标签
@@ -632,7 +632,7 @@ declare class API {
     */
 
 
-    updateTag:(id?,name?)=>any 
+    updateTag:(id?,name)=>any 
 
     /**
     * 删除标签
@@ -677,7 +677,7 @@ declare class API {
     */
 
 
-    getUsersFromTag:(tagId?,nextOpenId?)=>any 
+    getUsersFromTag:(tagId,nextOpenId)=>any 
 
     /**
     * 批量为用户打标签
@@ -698,7 +698,7 @@ declare class API {
     */
 
 
-    batchTagging:(openIdList?,tagId?)=>any 
+    batchTagging:(openIdList,tagId)=>any 
 
     /**
     * 批量为用户取消标签
@@ -719,7 +719,7 @@ declare class API {
     */
 
 
-    batchUnTagging:(openIdList?,tagId?)=>any 
+    batchUnTagging:(openIdList,tagId)=>any 
 
     /**
     * 获取用户身上的标签列表
@@ -737,7 +737,7 @@ declare class API {
     */
 
 
-    getIdList:(openId?)=>any 
+    getIdList:(openId)=>any 
 
     /**
     * 创建临时二维码
@@ -759,7 +759,7 @@ declare class API {
     */
 
 
-    createTmpQRCode:(sceneId?,expire?)=>any 
+    createTmpQRCode:(sceneId,expire)=>any 
 
     /**
     * 创建永久二维码
@@ -779,7 +779,7 @@ declare class API {
     */
 
 
-    createLimitQRCode:(sceneId?)=>any 
+    createLimitQRCode:(sceneId)=>any 
 
     /**
     * 生成显示二维码的链接。微信扫描后，可立即进入场景
@@ -792,7 +792,7 @@ declare class API {
     * @return {String} 显示二维码的URL地址，通过img标签可以显示出来 */
 
 
-    showQRCodeURL:(ticket?)=>any 
+    showQRCodeURL:(ticket)=>any 
 
     /**
     * 新增临时素材，分别有图片（image）、语音（voice）、视频（video）和缩略图（thumb）
@@ -826,7 +826,7 @@ declare class API {
     */
 
 
-    uploadMedia:(filepath?,type?,filename?,mime?)=>any 
+    uploadMedia:(filepath,type,filename,mime)=>any 
 
     /**
     * 上传图文消息内的图片获取URL
@@ -843,21 +843,21 @@ declare class API {
     */
 
 
-    uploadImage:(filepath?)=>any 
+    uploadImage:(filepath)=>any 
 
-    uploadImageMedia:(filepath?)=>any 
+    uploadImageMedia:(filepath)=>any 
 
-    uploadVoice:(...args?)=>any 
+    uploadVoice:(...args)=>any 
 
-    uploadVoiceMedia:(filepath?)=>any 
+    uploadVoiceMedia:(filepath)=>any 
 
-    uploadVideo:(...args?)=>any 
+    uploadVideo:(...args)=>any 
 
-    uploadVideoMedia:(filepath?)=>any 
+    uploadVideoMedia:(filepath)=>any 
 
-    uploadThumb:(...args?)=>any 
+    uploadThumb:(...args)=>any 
 
-    uploadThumbMedia:(filepath?)=>any 
+    uploadThumbMedia:(filepath)=>any 
 
     /**
     * 获取临时素材
@@ -872,7 +872,7 @@ declare class API {
     */
 
 
-    getMedia:(mediaId?)=>any 
+    getMedia:(mediaId)=>any 
 
     /**
     * 上传永久素材，分别有图片（image）、语音（voice）、和缩略图（thumb）
@@ -892,13 +892,13 @@ declare class API {
     */
 
 
-    uploadMaterial:(filepath?,type?)=>any 
+    uploadMaterial:(filepath,type)=>any 
 
-    uploadImageMaterial:(filepath?)=>any 
+    uploadImageMaterial:(filepath)=>any 
 
-    uploadVoiceMaterial:(filepath?)=>any 
+    uploadVoiceMaterial:(filepath)=>any 
 
-    uploadThumbMaterial:(filepath?)=>any 
+    uploadThumbMaterial:(filepath)=>any 
 
     /**
     * 上传永久素材，视频（video）
@@ -921,7 +921,7 @@ declare class API {
     */
 
 
-    uploadVideoMaterial:(filepath?,description?)=>any 
+    uploadVideoMaterial:(filepath,description)=>any 
 
     /**
     * 新增永久图文素材 * News:
@@ -954,7 +954,7 @@ declare class API {
     */
 
 
-    uploadNewsMaterial:(news?)=>any 
+    uploadNewsMaterial:(news)=>any 
 
     /**
     * 更新永久图文素材
@@ -989,7 +989,7 @@ declare class API {
     */
 
 
-    updateNewsMaterial:(news?)=>any 
+    updateNewsMaterial:(news)=>any 
 
     /**
     * 根据媒体ID获取永久素材
@@ -1004,7 +1004,7 @@ declare class API {
     */
 
 
-    getMaterial:(mediaId?)=>any 
+    getMaterial:(mediaId)=>any 
 
     /**
     * 删除永久素材
@@ -1019,7 +1019,7 @@ declare class API {
     */
 
 
-    removeMaterial:(mediaId?)=>any 
+    removeMaterial:(mediaId)=>any 
 
     /**
     * 获取素材总数
@@ -1073,7 +1073,7 @@ declare class API {
     */
 
 
-    getMaterials:(type?,offset?,count?)=>any 
+    getMaterials:(type,offset,count)=>any 
 
     /**
     * 客服消息，发送文字消息
@@ -1087,7 +1087,7 @@ declare class API {
     */
 
 
-    sendText:(openid?,text?)=>any 
+    sendText:(openid,text)=>any 
 
     /**
     * 客服消息，发送图片消息
@@ -1101,7 +1101,7 @@ declare class API {
     */
 
 
-    sendImage:(openid?,mediaId?)=>any 
+    sendImage:(openid,mediaId)=>any 
 
     /**
     * 客服消息，发送卡券
@@ -1115,7 +1115,7 @@ declare class API {
     */
 
 
-    sendCard:(openid?,cardid?)=>any 
+    sendCard:(openid,cardid)=>any 
 
     /**
     * 客服消息，发送语音消息
@@ -1129,7 +1129,7 @@ declare class API {
     */
 
 
-    sendVoice:(openid?,mediaId?)=>any 
+    sendVoice:(openid,mediaId)=>any 
 
     /**
     * 客服消息，发送视频消息
@@ -1144,7 +1144,7 @@ declare class API {
     */
 
 
-    sendVideo:(openid?,mediaId?,thumbMediaId?)=>any 
+    sendVideo:(openid,mediaId,thumbMediaId)=>any 
 
     /**
     * 客服消息，发送音乐消息
@@ -1165,7 +1165,7 @@ declare class API {
     */
 
 
-    sendMusic:(openid?,music?)=>any 
+    sendMusic:(openid,music)=>any 
 
     /**
     * 客服消息，发送图文消息
@@ -1192,7 +1192,7 @@ declare class API {
     */
 
 
-    sendNews:(openid?,articles?)=>any 
+    sendNews:(openid,articles)=>any 
 
     /**
     * 客服消息，发送图文消息（点击跳转到图文消息页面）
@@ -1206,7 +1206,7 @@ declare class API {
     */
 
 
-    sendMpNews:(openid?,mediaId?)=>any 
+    sendMpNews:(openid,mediaId)=>any 
 
     /**
     * 客服消息，发送小程序卡片（要求小程序与公众号已关联）
@@ -1226,7 +1226,7 @@ declare class API {
     */
 
 
-    sendMiniProgram:(openid?,miniprogram?)=>any 
+    sendMiniProgram:(openid,miniprogram)=>any 
 
     /**
     * 获取自动回复规则
@@ -1325,7 +1325,7 @@ declare class API {
     */
 
 
-    setIndustry:(industryIds?)=>any 
+    setIndustry:(industryIds)=>any 
 
     /**
     * 获得模板ID
@@ -1338,7 +1338,7 @@ declare class API {
     */
 
 
-    addTemplate:(templateIdShort?)=>any 
+    addTemplate:(templateIdShort)=>any 
 
     /**
     * 发送模板消息
@@ -1365,7 +1365,7 @@ declare class API {
     */
 
 
-    sendTemplate:(openid?,templateId?,url?,topColor?,data?,miniprogram?)=>any 
+    sendTemplate:(openid,templateId,url,topColor,data,miniprogram)=>any 
 
     /**
     * 发送模板消息支持小程序
@@ -1394,7 +1394,7 @@ declare class API {
     */
 
 
-    sendMiniProgramTemplate:(openid?,templateId?,page?,formId?,data?,color?,emphasisKeyword?)=>any 
+    sendMiniProgramTemplate:(openid,templateId,page,formId,data,color,emphasisKeyword)=>any 
 
     /**
     * 获取客服聊天记录
@@ -1438,7 +1438,7 @@ declare class API {
     */
 
 
-    getRecords:(opts?)=>any 
+    getRecords:(opts)=>any 
 
     /**
     * 获取客服基本信息
@@ -1524,7 +1524,7 @@ declare class API {
     */
 
 
-    addKfAccount:(account?,nick?)=>any 
+    addKfAccount:(account,nick)=>any 
 
     /**
     * 邀请绑定客服帐号
@@ -1545,7 +1545,7 @@ declare class API {
     */
 
 
-    inviteworker:(account?,wx?)=>any 
+    inviteworker:(account,wx?)=>any 
 
     /**
     * 设置客服账号
@@ -1565,7 +1565,7 @@ declare class API {
     */
 
 
-    updateKfAccount:(account?,nick?)=>any 
+    updateKfAccount:(account,nick)=>any 
 
     /**
     * 删除客服账号
@@ -1584,7 +1584,7 @@ declare class API {
     */
 
 
-    deleteKfAccount:(account?)=>any 
+    deleteKfAccount:(account)=>any 
 
     /**
     * 设置客服头像
@@ -1604,7 +1604,7 @@ declare class API {
     */
 
 
-    setKfAccountAvatar:(account?,filepath?)=>any 
+    setKfAccountAvatar:(account,filepath)=>any 
 
     /**
     * 创建客服会话
@@ -1624,7 +1624,7 @@ declare class API {
     */
 
 
-    createKfSession:(account?,openid?)=>any 
+    createKfSession:(account,openid)=>any 
 
     /**
     * 上传多媒体文件，分别有图片（image）、语音（voice）、视频（video）和缩略图（thumb）
@@ -1668,7 +1668,7 @@ declare class API {
     * ``` * @param {Object} news 图文消息对象 */
 
 
-    uploadNews:(news?)=>any 
+    uploadNews:(news)=>any 
 
     /**
     * 将通过上传下载多媒体文件得到的视频media_id变成视频素材
@@ -1695,7 +1695,7 @@ declare class API {
     * ``` * @param {Object} opts 待上传为素材的视频 */
 
 
-    uploadMPVideo:(opts?)=>any 
+    uploadMPVideo:(opts)=>any 
 
     /**
     * 群发消息，分别有图文（news）、文本(text)、语音（voice）、图片（image）和视频（video）
@@ -1729,7 +1729,7 @@ declare class API {
     */
 
 
-    massSend:(opts?,receivers?,clientMsgId?,sendIgnoreReprint?)=>any 
+    massSend:(opts,receivers,clientMsgId,sendIgnoreReprint)=>any 
 
     /**
     * 群发图文（news）消息
@@ -1753,7 +1753,7 @@ declare class API {
     * */
 
 
-    massSendNews:(mediaId?,receivers?,clientMsgId?,sendIgnoreReprint?)=>any 
+    massSendNews:(mediaId,receivers,clientMsgId,sendIgnoreReprint)=>any 
 
     /**
     * 群发文字（text）消息
@@ -1775,7 +1775,7 @@ declare class API {
     * @param {String|Array} receivers 接收人。一个组，或者openid列表 */
 
 
-    massSendText:(content?,receivers?,clientMsgId?)=>any 
+    massSendText:(content,receivers,clientMsgId)=>any 
 
     /**
     * 群发声音（voice）消息
@@ -1797,7 +1797,7 @@ declare class API {
     * @param {String|Array} receivers 接收人。一个组，或者openid列表 */
 
 
-    massSendVoice:(mediaId?,receivers?,clientMsgId?)=>any 
+    massSendVoice:(mediaId,receivers,clientMsgId)=>any 
 
     /**
     * 群发图片（image）消息
@@ -1819,7 +1819,7 @@ declare class API {
     * @param {String|Array} receivers 接收人。一个组，或者openid列表 */
 
 
-    massSendImage:(mediaId?,receivers?,clientMsgId?)=>any 
+    massSendImage:(mediaId,receivers,clientMsgId)=>any 
 
     /**
     * 群发视频（video）消息
@@ -1842,7 +1842,7 @@ declare class API {
     */
 
 
-    massSendVideo:(mediaId?,receivers?,clientMsgId?)=>any 
+    massSendVideo:(mediaId,receivers,clientMsgId)=>any 
 
     /**
     * 群发视频（video）消息，直接通过上传文件得到的media id进行群发（自动生成素材）
@@ -1872,7 +1872,7 @@ declare class API {
     * @param {String|Array} receivers 接收人。一个组，或者openid列表 */
 
 
-    massSendMPVideo:(data?,receivers?,clientMsgId?)=>any 
+    massSendMPVideo:(data,receivers,clientMsgId)=>any 
 
     /**
     * 删除群发消息
@@ -1891,7 +1891,7 @@ declare class API {
     */
 
 
-    deleteMass:(messageId?)=>any 
+    deleteMass:(messageId)=>any 
 
     /**
     * 预览接口，预览图文消息
@@ -1912,7 +1912,7 @@ declare class API {
     */
 
 
-    previewNews:(openid?,mediaId?)=>any 
+    previewNews:(openid,mediaId)=>any 
 
     /**
     * 预览接口，预览文本消息
@@ -1934,7 +1934,7 @@ declare class API {
     */
 
 
-    previewText:(openid?,content?)=>any 
+    previewText:(openid,content)=>any 
 
     /**
     * 预览接口，预览语音消息
@@ -1954,7 +1954,7 @@ declare class API {
     * @param {String} mediaId 语音mediaId */
 
 
-    previewVoice:(openid?,mediaId?)=>any 
+    previewVoice:(openid,mediaId)=>any 
 
     /**
     * 预览接口，预览图片消息
@@ -1975,7 +1975,7 @@ declare class API {
     */
 
 
-    previewImage:(openid?,mediaId?)=>any 
+    previewImage:(openid,mediaId)=>any 
 
     /**
     * 预览接口，预览视频消息
@@ -1995,7 +1995,7 @@ declare class API {
     * @param {String} mediaId 视频mediaId */
 
 
-    previewVideo:(openid?,mediaId?)=>any 
+    previewVideo:(openid,mediaId)=>any 
 
     /**
     * 查询群发消息状态
@@ -2013,7 +2013,7 @@ declare class API {
     * ``` * @param {String} messageId 消息ID */
 
 
-    getMassMessageStatus:(messageId?)=>any 
+    getMassMessageStatus:(messageId)=>any 
 
     /**
     * 增加商品
@@ -2105,7 +2105,7 @@ declare class API {
     */
 
 
-    createGoods:(goods?)=>any 
+    createGoods:(goods)=>any 
 
     /**
     * 删除商品
@@ -2125,7 +2125,7 @@ declare class API {
     */
 
 
-    deleteGoods:(productId?)=>any 
+    deleteGoods:(productId)=>any 
 
     /**
     * 修改商品
@@ -2217,7 +2217,7 @@ declare class API {
     */
 
 
-    updateGoods:(goods?)=>any 
+    updateGoods:(goods)=>any 
 
     /**
     * 查询商品
@@ -2298,7 +2298,7 @@ declare class API {
     */
 
 
-    getGoods:(productId?)=>any 
+    getGoods:(productId)=>any 
 
     /**
     * 获取指定状态的所有商品
@@ -2328,7 +2328,7 @@ declare class API {
     */
 
 
-    getGoodsByStatus:(status?)=>any 
+    getGoodsByStatus:(status)=>any 
 
     /**
     * 商品上下架
@@ -2349,7 +2349,7 @@ declare class API {
     */
 
 
-    updateGoodsStatus:(productId?,status?)=>any 
+    updateGoodsStatus:(productId,status)=>any 
 
     /**
     * 获取指定分类的所有子分类
@@ -2374,7 +2374,7 @@ declare class API {
     */
 
 
-    getSubCats:(catId?)=>any 
+    getSubCats:(catId)=>any 
 
     /**
     * 获取指定子分类的所有SKU
@@ -2404,7 +2404,7 @@ declare class API {
     */
 
 
-    getSKUs:(catId?)=>any 
+    getSKUs:(catId)=>any 
 
     /**
     * 获取指定分类的所有属性
@@ -2441,7 +2441,7 @@ declare class API {
     */
 
 
-    getProperties:(catId?)=>any 
+    getProperties:(catId)=>any 
 
     /**
     * 增加库存
@@ -2464,7 +2464,7 @@ declare class API {
     */
 
 
-    updateStock:(number?,productId?,sku?)=>any 
+    updateStock:(number,productId,sku)=>any 
 
     /**
     * 增加邮费模板
@@ -2557,7 +2557,7 @@ declare class API {
     */
 
 
-    addExpressTemplate:(express?)=>any 
+    addExpressTemplate:(express)=>any 
 
     /**
     * 修改邮费模板
@@ -2577,7 +2577,7 @@ declare class API {
     */
 
 
-    deleteExpressTemplate:(templateId?)=>any 
+    deleteExpressTemplate:(templateId)=>any 
 
     /**
     * 修改邮费模板
@@ -2604,7 +2604,7 @@ declare class API {
     */
 
 
-    updateExpressTemplate:(template?)=>any 
+    updateExpressTemplate:(template)=>any 
 
     /**
     * 获取指定ID的邮费模板
@@ -2653,7 +2653,7 @@ declare class API {
     */
 
 
-    getExpressTemplateById:(templateId?)=>any 
+    getExpressTemplateById:(templateId)=>any 
 
     /**
     * 获取所有邮费模板的未封装版本
@@ -2718,7 +2718,7 @@ declare class API {
     */
 
 
-    createGoodsGroup:(groupName?,productList?)=>any 
+    createGoodsGroup:(groupName,productList)=>any 
 
     /**
     * 删除商品分组
@@ -2738,7 +2738,7 @@ declare class API {
     */
 
 
-    deleteGoodsGroup:(groupId?)=>any 
+    deleteGoodsGroup:(groupId)=>any 
 
     /**
     * 修改商品分组属性
@@ -2759,7 +2759,7 @@ declare class API {
     */
 
 
-    updateGoodsGroup:(groupId?,groupName?)=>any 
+    updateGoodsGroup:(groupId,groupName)=>any 
 
     /**
     * 修改商品分组内的商品
@@ -2782,7 +2782,7 @@ declare class API {
     */
 
 
-    updateGoodsForGroup:(groupId?,addProductList?,delProductList?)=>any 
+    updateGoodsForGroup:(groupId,addProductList,delProductList)=>any 
 
     /**
     * 获取所有商品分组
@@ -2839,7 +2839,7 @@ declare class API {
     */
 
 
-    getGroupById:(groupId?)=>any 
+    getGroupById:(groupId)=>any 
 
     /**
     * 增加货架
@@ -2942,7 +2942,7 @@ declare class API {
     */
 
 
-    createShelf:(shelf?)=>any 
+    createShelf:(shelf)=>any 
 
     /**
     * 删除货架
@@ -2962,7 +2962,7 @@ declare class API {
     */
 
 
-    deleteShelf:(shelfId?)=>any 
+    deleteShelf:(shelfId)=>any 
 
     /**
     * 修改货架
@@ -2991,7 +2991,7 @@ declare class API {
     */
 
 
-    updateShelf:(shelf?)=>any 
+    updateShelf:(shelf)=>any 
 
     /**
     * 获取所有货架
@@ -3085,7 +3085,7 @@ declare class API {
     */
 
 
-    getShelfById:(shelfId?)=>any 
+    getShelfById:(shelfId)=>any 
 
     /**
     * 根据订单Id获取订单详情
@@ -3129,7 +3129,7 @@ declare class API {
     */
 
 
-    getOrderById:(orderId?)=>any 
+    getOrderById:(orderId)=>any 
 
     /**
     * 根据订单状态/创建时间获取订单详情
@@ -3207,7 +3207,7 @@ declare class API {
     */
 
 
-    getOrdersByStatus:(status?,beginTime?,endTime?)=>any 
+    getOrdersByStatus:(status,beginTime,endTime)=>any 
 
     /**
     * 设置订单发货信息
@@ -3230,7 +3230,7 @@ declare class API {
     */
 
 
-    setExpressForOrder:(orderId?,deliveryCompany?,deliveryTrackNo?,isOthers?)=>any 
+    setExpressForOrder:(orderId,deliveryCompany,deliveryTrackNo,isOthers)=>any 
 
     /**
     * 设置订单发货信息－不需要物流配送
@@ -3251,7 +3251,7 @@ declare class API {
     */
 
 
-    setNoDeliveryForOrder:(orderId?)=>any 
+    setNoDeliveryForOrder:(orderId)=>any 
 
     /**
     * 关闭订单
@@ -3271,7 +3271,7 @@ declare class API {
     */
 
 
-    closeOrder:(orderId?)=>any 
+    closeOrder:(orderId)=>any 
 
     /**
     * 上传图片
@@ -3293,7 +3293,7 @@ declare class API {
     */
 
 
-    uploadPicture:(filepath?)=>any 
+    uploadPicture:(filepath)=>any 
 
     /**
     * 微信公众号支付: 发货通知
@@ -3322,7 +3322,7 @@ declare class API {
     */
 
 
-    deliverNotify:(data?)=>any 
+    deliverNotify:(data)=>any 
 
     /**
     * 微信公众号支付: 订单查询
@@ -3372,7 +3372,7 @@ declare class API {
     */
 
 
-    orderQuery:(query?)=>any 
+    orderQuery:(query)=>any 
 
     /**
     * 标记客户的投诉处理状态
@@ -3393,7 +3393,7 @@ declare class API {
     */
 
 
-    updateFeedback:(openid?,feedbackId?)=>any 
+    updateFeedback:(openid,feedbackId)=>any 
 
     /**
     * 短网址服务
@@ -3406,7 +3406,7 @@ declare class API {
     */
 
 
-    shorturl:(longUrl?)=>any 
+    shorturl:(longUrl)=>any 
 
     /**
     * 发送语义理解请求
@@ -3457,7 +3457,7 @@ declare class API {
     */
 
 
-    semantic:(uid?,opts?)=>any 
+    semantic:(uid,opts)=>any 
 
     /**
     * 获取微信服务器IP地址
@@ -3477,39 +3477,39 @@ declare class API {
 
     getIp:()=>any 
 
-    getUserSummary:(begin?,end?)=>any 
+    getUserSummary:(begin,end)=>any 
 
-    getUserCumulate:(begin?,end?)=>any 
+    getUserCumulate:(begin,end)=>any 
 
-    getArticleSummary:(begin?,end?)=>any 
+    getArticleSummary:(begin,end)=>any 
 
-    getArticleTotal:(begin?,end?)=>any 
+    getArticleTotal:(begin,end)=>any 
 
-    getUserRead:(begin?,end?)=>any 
+    getUserRead:(begin,end)=>any 
 
-    getUserReadHour:(begin?,end?)=>any 
+    getUserReadHour:(begin,end)=>any 
 
-    getUserShare:(begin?,end?)=>any 
+    getUserShare:(begin,end)=>any 
 
-    getUserShareHour:(begin?,end?)=>any 
+    getUserShareHour:(begin,end)=>any 
 
-    getUpstreamMsg:(begin?,end?)=>any 
+    getUpstreamMsg:(begin,end)=>any 
 
-    getUpstreamMsgHour:(begin?,end?)=>any 
+    getUpstreamMsgHour:(begin,end)=>any 
 
-    getUpstreamMsgWeek:(begin?,end?)=>any 
+    getUpstreamMsgWeek:(begin,end)=>any 
 
-    getUpstreamMsgMonth:(begin?,end?)=>any 
+    getUpstreamMsgMonth:(begin,end)=>any 
 
-    getUpstreamMsgDist:(begin?,end?)=>any 
+    getUpstreamMsgDist:(begin,end)=>any 
 
-    getUpstreamMsgDistWeek:(begin?,end?)=>any 
+    getUpstreamMsgDistWeek:(begin,end)=>any 
 
-    getUpstreamMsgDistMonth:(begin?,end?)=>any 
+    getUpstreamMsgDistMonth:(begin,end)=>any 
 
-    getInterfaceSummary:(begin?,end?)=>any 
+    getInterfaceSummary:(begin,end)=>any 
 
-    getInterfaceSummaryHour:(begin?,end?)=>any 
+    getInterfaceSummaryHour:(begin,end)=>any 
 
     /**
     * 多台服务器负载均衡时，ticketToken需要外部存储共享。
@@ -3536,7 +3536,7 @@ declare class API {
     */
 
 
-    registerTicketHandle:(getTicketToken?,saveTicketToken?)=>any 
+    registerTicketHandle:(getTicketToken,saveTicketToken)=>any 
 
     /**
     * 获取js sdk所需的有效js ticket
@@ -3548,7 +3548,7 @@ declare class API {
     * - `expires_in`, 有效期7200秒，开发者必须在自己的服务全局缓存jsapi_ticket */
 
 
-    getTicket:(type?)=>any 
+    getTicket:(type)=>any 
 
     /*!
     * 卡券card_ext里的签名算法 * @name signCardExt
@@ -3560,7 +3560,7 @@ declare class API {
     * @param {String} balance 红包余额，以分为单位。红包类型（LUCKY_MONEY）必填、其他卡券类型不必填。 */
 
 
-    ensureTicket:(type?)=>any 
+    ensureTicket:(type)=>any 
 
     /**
     * 获取微信JS SDK Config的所需参数 * Examples:
@@ -3577,7 +3577,7 @@ declare class API {
     */
 
 
-    getJsConfig:(param?)=>any 
+    getJsConfig:(param)=>any 
 
     /**
     * 获取微信JS SDK Config的所需参数
@@ -3597,7 +3597,7 @@ declare class API {
     */
 
 
-    getCardExt:(param?)=>any 
+    getCardExt:(param)=>any 
 
     /**
     * 获取最新的js api ticket
@@ -3631,7 +3631,7 @@ declare class API {
     */
 
 
-    uploadLogo:(filepath?)=>any 
+    uploadLogo:(filepath)=>any 
 
     /**
     * @name addLocations
@@ -3639,29 +3639,29 @@ declare class API {
     */
 
 
-    addLocations:(locations?)=>any 
+    addLocations:(locations)=>any 
 
-    getLocations:(offset?,count?)=>any 
+    getLocations:(offset,count)=>any 
 
     getColors:()=>any 
 
-    createCard:(card?)=>any 
+    createCard:(card)=>any 
 
-    getRedirectUrl:(url?,encryptCode?,cardId?)=>any 
+    getRedirectUrl:(url,encryptCode,cardId)=>any 
 
-    createQRCode:(card?)=>any 
+    createQRCode:(card)=>any 
 
-    consumeCode:(code?,cardId?)=>any 
+    consumeCode:(code,cardId)=>any 
 
-    decryptCode:(encryptCode?)=>any 
+    decryptCode:(encryptCode)=>any 
 
-    deleteCard:(cardId?)=>any 
+    deleteCard:(cardId)=>any 
 
-    getCode:(code?,cardId?)=>any 
+    getCode:(code,cardId)=>any 
 
-    getCards:(offset?,count?,status_list?)=>any 
+    getCards:(offset,count,status_list)=>any 
 
-    getCard:(cardId?)=>any 
+    getCard:(cardId)=>any 
 
     /**
     * 获取用户已领取的卡券
@@ -3676,61 +3676,61 @@ declare class API {
     */
 
 
-    getCardList:(openid?,cardId?)=>any 
+    getCardList:(openid,cardId)=>any 
 
-    updateCode:(code?,cardId?,newcode?)=>any 
+    updateCode:(code,cardId,newcode)=>any 
 
-    unavailableCode:(code?,cardId?)=>any 
+    unavailableCode:(code,cardId)=>any 
 
-    updateCard:(cardId?,cardInfo?)=>any 
+    updateCard:(cardId,cardInfo)=>any 
 
-    updateCardStock:(cardId?,num?)=>any 
+    updateCardStock:(cardId,num)=>any 
 
-    activateMembercard:(info?)=>any 
+    activateMembercard:(info)=>any 
 
-    getActivateMembercardUrl:(info?)=>any 
+    getActivateMembercardUrl:(info)=>any 
 
-    updateMembercard:(info?)=>any 
+    updateMembercard:(info)=>any 
 
-    getActivateTempinfo:(activate_ticket?)=>any 
+    getActivateTempinfo:(activate_ticket)=>any 
 
-    activateUserForm:(data?)=>any 
+    activateUserForm:(data)=>any 
 
-    updateMovieTicket:(info?)=>any 
+    updateMovieTicket:(info)=>any 
 
-    checkInBoardingPass:(info?)=>any 
+    checkInBoardingPass:(info)=>any 
 
-    updateLuckyMonkeyBalance:(code?,cardId?,balance?)=>any 
+    updateLuckyMonkeyBalance:(code,cardId,balance)=>any 
 
-    updateMeetingTicket:(info?)=>any 
+    updateMeetingTicket:(info)=>any 
 
-    setTestWhitelist:(info?)=>any 
+    setTestWhitelist:(info)=>any 
 
-    transferMessage:(deviceType?,deviceId?,openid?,content?)=>any 
+    transferMessage:(deviceType,deviceId,openid,content)=>any 
 
-    transferStatus:(deviceType?,deviceId?,openid?,status?)=>any 
+    transferStatus:(deviceType,deviceId,openid,status)=>any 
 
-    createDeviceQRCode:(deviceIds?)=>any 
+    createDeviceQRCode:(deviceIds)=>any 
 
-    authorizeDevices:(devices?,optype?)=>any 
+    authorizeDevices:(devices,optype)=>any 
 
-    getDeviceQRCode:(devices?,optype?)=>any 
+    getDeviceQRCode:(devices,optype)=>any 
 
-    bindDevice:(deviceId?,openid?,ticket?)=>any 
+    bindDevice:(deviceId,openid,ticket)=>any 
 
-    unbindDevice:(deviceId?,openid?,ticket?)=>any 
+    unbindDevice:(deviceId,openid,ticket)=>any 
 
-    compelBindDevice:(deviceId?,openid?)=>any 
+    compelBindDevice:(deviceId,openid)=>any 
 
-    compelUnbindDevice:(deviceId?,openid?)=>any 
+    compelUnbindDevice:(deviceId,openid)=>any 
 
-    getDeviceStatus:(deviceId?)=>any 
+    getDeviceStatus:(deviceId)=>any 
 
-    verifyDeviceQRCode:(ticket?)=>any 
+    verifyDeviceQRCode:(ticket)=>any 
 
-    getOpenID:(deviceId?,deviceType?)=>any 
+    getOpenID:(deviceId,deviceType)=>any 
 
-    getBindDevice:(openid?)=>any 
+    getBindDevice:(openid)=>any 
 
     /**
     * 申请开通功能
@@ -3766,7 +3766,7 @@ declare class API {
     */
 
 
-    registerShakeAccount:(options?)=>any 
+    registerShakeAccount:(options)=>any 
 
     /**
     * 查询审核状态
@@ -3824,7 +3824,7 @@ declare class API {
     */
 
 
-    applyBeacons:(options?)=>any 
+    applyBeacons:(options)=>any 
 
     /**
     * 设备管理: 编辑设备的备注信息。
@@ -3861,7 +3861,7 @@ declare class API {
     */
 
 
-    updateBeacon:(options?)=>any 
+    updateBeacon:(options)=>any 
 
     /**
     * 设备管理: 配置设备与门店的关联关系。
@@ -3897,7 +3897,7 @@ declare class API {
     */
 
 
-    bindBeaconLocation:(options?)=>any 
+    bindBeaconLocation:(options)=>any 
 
     /**
     * 设备管理: 查询设备列表
@@ -3974,7 +3974,7 @@ declare class API {
     */
 
 
-    getBeacons:(options?)=>any 
+    getBeacons:(options)=>any 
 
     /**
     * 页面管理: 新增页面
@@ -4011,7 +4011,7 @@ declare class API {
     */
 
 
-    createPage:(page?)=>any 
+    createPage:(page)=>any 
 
     /**
     * 页面管理: 编辑页面信息
@@ -4048,7 +4048,7 @@ declare class API {
     */
 
 
-    updatePage:(page?)=>any 
+    updatePage:(page)=>any 
 
     /**
     * 页面管理: 删除页面
@@ -4080,7 +4080,7 @@ declare class API {
     */
 
 
-    deletePages:(page_ids?)=>any 
+    deletePages:(page_ids)=>any 
 
     /**
     * 页面管理: 查询页面列表
@@ -4136,7 +4136,7 @@ declare class API {
     */
 
 
-    getPages:(options?)=>any 
+    getPages:(options)=>any 
 
     /**
     * 上传图片素材
@@ -4162,7 +4162,7 @@ declare class API {
     */
 
 
-    uploadPageIcon:(filepath?)=>any 
+    uploadPageIcon:(filepath)=>any 
 
     /**
     * 配置设备与页面的关联关系
@@ -4200,7 +4200,7 @@ declare class API {
     */
 
 
-    bindBeaconWithPages:(options?)=>any 
+    bindBeaconWithPages:(options)=>any 
 
     /**
     * 查询设备与页面的关联关系
@@ -4263,7 +4263,7 @@ declare class API {
     */
 
 
-    searchBeaconPageRelation:(options?)=>any 
+    searchBeaconPageRelation:(options)=>any 
 
     /**
     * 获取摇周边的设备及用户信息
@@ -4293,7 +4293,7 @@ declare class API {
     */
 
 
-    getShakeInfo:(ticket?)=>any 
+    getShakeInfo:(ticket)=>any 
 
     /**
     * 数据统计: 以设备为维度的数据统计接口
@@ -4345,7 +4345,7 @@ declare class API {
     */
 
 
-    getDeviceStatistics:(options?)=>any 
+    getDeviceStatistics:(options)=>any 
 
     /**
     * 数据统计: 以页面为维度的数据统计接口
@@ -4391,7 +4391,7 @@ declare class API {
     */
 
 
-    getPageStatistics:(options?)=>any 
+    getPageStatistics:(options)=>any 
 
     /**
     * 创建门店 * Tips:
@@ -4438,7 +4438,7 @@ declare class API {
     */
 
 
-    addPoi:(poi?)=>any 
+    addPoi:(poi)=>any 
 
     /**
     * 获取门店信息 * Examples:
@@ -4479,7 +4479,7 @@ declare class API {
     */
 
 
-    getPoi:(poiId?)=>any 
+    getPoi:(poiId)=>any 
 
     /**
     * 获取门店列表
@@ -4519,7 +4519,7 @@ declare class API {
     */
 
 
-    getPois:(begin?,limit?)=>any 
+    getPois:(begin,limit)=>any 
 
     /**
     * 删除门店
@@ -4533,7 +4533,7 @@ declare class API {
     */
 
 
-    delPoi:(poiId?)=>any 
+    delPoi:(poiId)=>any 
 
     /**
     * 修改门店服务信息 * Tips: * - 待审核门店不允许修改 * Poi:
@@ -4567,7 +4567,7 @@ declare class API {
     */
 
 
-    updatePoi:(poi?)=>any 
+    updatePoi:(poi)=>any 
 
 
 
