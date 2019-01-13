@@ -1,4 +1,5 @@
 ##添加d.ts文件，支持一下typescript
+
 yarn add https://github.com/ikrong/co-wechat-api
 npm add https://github.com/ikrong/co-wechat-api
 可以使用typescript，有提示哒~
