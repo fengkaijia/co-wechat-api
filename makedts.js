@@ -53,7 +53,9 @@ for (let key in API.prototype) {
     }
     dtsfile += "    " + `${key}:(${
         getParameterName(API.prototype[key]).
-        map(param=>param.match("...")?param:param+="?").join(",")
+        map(
+            param=> (param.match(/\.\.\./)?param:(param+="?")) 
+        ).join(",")
     })=>any \n\n`
 }
 /**替换模块描述 */
