@@ -85,7 +85,7 @@ declare class API {
     * await api.ensureAccessToken();
     * ```
     */
-    ensureAccessToken: () => Promise<string>
+    ensureAccessToken: () => Promise<{ accessToken: string, expireTime: number }>
     /**
       * 用于支持对象合并。将对象合并到API.prototype上，使得能够支持扩展
       * Examples:
