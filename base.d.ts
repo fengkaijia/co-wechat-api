@@ -17,6 +17,10 @@ declare class AccessToken {
 }
 
 declare class API {
+    /**小程序appid */
+    appid: string;
+    /**小程序appsecret */
+    appsecret: string;
     static AccessToken: AccessToken
     /**
    * 根据 appid 和 appsecret 创建API的构造函数
