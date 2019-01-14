@@ -6,7 +6,8 @@
   "types": "./index.d.ts",
   "scripts": {
     "test": "make test-all",
-    "test-file": "mocha -R spec"
+    "test-file": "mocha -R spec",
+    "makedts": "node makedts"
   },
   "repository": {
     "type": "git",
