@@ -75,7 +75,7 @@ declare class API {
     * {"access_token": "ACCESS_TOKEN","expires_in": 7200}
     * ```
     */
-    getAccessToken: () => Promise<{ access_token: string, expires_in: number }>
+    getAccessToken: () => Promise<{ accessToken: string, expireTime: number }>
     /*!
     * 需要access token的接口调用如果采用preRequest进行封装后，就可以直接调用。
     * 无需依赖 getAccessToken 为前置调用。
