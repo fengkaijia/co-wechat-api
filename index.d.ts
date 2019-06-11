@@ -1,6 +1,6 @@
 /**
  * generate by ikrong from ikrong.com
- * 2019-1-14 20:35
+ * 2019-6-11 19:25
  */
 
 declare class AccessToken {
@@ -851,15 +851,15 @@ declare class API {
 
     uploadImageMedia:(filepath?)=>any 
 
-    uploadVoice:(...args)=>any 
+    uploadVoice:(msg?,DeprecationWarning?,code?,deprecated?)=>any 
 
     uploadVoiceMedia:(filepath?)=>any 
 
-    uploadVideo:(...args)=>any 
+    uploadVideo:(msg?,DeprecationWarning?,code?,deprecated?)=>any 
 
     uploadVideoMedia:(filepath?)=>any 
 
-    uploadThumb:(...args)=>any 
+    uploadThumb:(msg?,DeprecationWarning?,code?,deprecated?)=>any 
 
     uploadThumbMedia:(filepath?)=>any 
 
@@ -1332,6 +1332,30 @@ declare class API {
     setIndustry:(industryIds?)=>any 
 
     /**
+    * 获取设置的行业信息
+    * Examples:
+    * ```
+    * api.getIndustry(callback);
+    * ```
+    * Callback:
+    *
+    * - `err`, 调用失败时得到的异常
+    * - `result`, 调用正常时得到的对象
+    *
+    * Result:
+    * ```
+    * // 结果示例
+    * {
+    *   "primary_industry":{"first_class":"运输与仓储","second_class":"快递"},
+    *   "secondary_industry":{"first_class":"IT科技","second_class":"互联网|电子商务"}
+    * }
+    * ```
+    */
+
+
+    getIndustry:()=>any 
+
+    /**
     * 获得模板ID
     * Examples:
     * ```
@@ -1343,6 +1367,36 @@ declare class API {
 
 
     addTemplate:(templateIdShort?)=>any 
+
+    /**
+    * 获取模板列表
+    * Examples:
+    * ```
+    * api.getAllPrivateTemplate(callback);
+    * ```
+    * Callback:
+    *
+    * - `err`, 调用失败时得到的异常
+    * - `result`, 调用正常时得到的对象
+    *
+    * Result:
+    * ```
+    * // 结果示例
+    * {
+    *  "template_list": [{
+    *       "template_id": "iPk5sOIt5X_flOVKn5GrTFpncEYTojx6ddbt8WYoV5s",
+    *       "title": "领取奖金提醒",
+    *       "primary_industry": "IT科技",
+    *       "deputy_industry": "互联网|电子商务",
+    *       "content": "{ {result.DATA} }\n\n领奖金额:{ {withdrawMoney.DATA} }\n领奖  时间:{ {withdrawTime.DATA} }\n银行信息:{ {cardInfo.DATA} }\n到账时间:  { {arrivedTime.DATA} }\n{ {remark.DATA} }",
+    *       "example": "您已提交领奖申请\n\n领奖金额：xxxx元\n领奖时间：2013-10-10 12:22:22\n银行信息：xx银行(尾号xxxx)\n到账时间：预计xxxxxxx\n\n预计将于xxxx到达您的银行卡"
+    *    }]
+    * }
+    * ```
+    */
+
+
+    getAllPrivateTemplate:(callback?)=>any 
 
     /**
     * 发送模板消息
@@ -1372,6 +1426,24 @@ declare class API {
     sendTemplate:(openid?,templateId?,url?,topColor?,data?,miniprogram?)=>any 
 
     /**
+    * 删除模板
+    * Examples:
+    * ```
+    * var templateId = ”Dyvp3-Ff0cnail_CDSzk1fIc6-9lOkxsQE7exTJbwUE”
+    * api.delPrivateTemplate(templateId, callback);
+    * ```
+    * Callback:
+    *
+    * - `err`, 调用失败时得到的异常
+    * - `result`, 调用正常时得到的对象
+    *
+    * @param {String} templateId 公众帐号下模板消息ID
+    */
+
+
+    delPrivateTemplate:(templateId?)=>any 
+
+    /**
     * 发送模板消息支持小程序
     * Examples:
     * ```
@@ -1399,6 +1471,39 @@ declare class API {
 
 
     sendMiniProgramTemplate:(openid?,templateId?,page?,formId?,data?,color?,emphasisKeyword?)=>any 
+
+    /**
+    * 通过API推送订阅模板消息给到授权微信用户
+    * Examples:
+    * ```
+    * var templateId = '模板id';
+    * var url = '点击消息跳转的链接，需要有ICP备案';
+    * var scene = '订阅场景值';
+    * var miniprogram = {
+    *    appid:'',
+    *    pagepath:'',
+    * }
+    * var data = {
+    *  keyword1: {
+    *    "value":'黄先生',
+    *    "color":"#173177"
+    *  }
+    * };
+    * var title = '消息标题，15字以内'
+    * api.sendSubscribe('openid', templateId, url, miniprogram, scene, title, data);
+    * ```
+    *
+    * @param {String} openid 接收者（用户）的 openid
+    * @param {String} templateId 所需下发的模板消息的id
+    * @param {String} url 点击消息跳转的链接，需要有ICP备案
+    * @param {Object} miniprogram 跳小程序所需数据，不需跳小程序可不用传该数据
+    * @param {String} scene 订阅场景值
+    * @param {String} title 消息标题，15字以内
+    * @param {Object} data 消息正文，value为消息内容文本（200字以内），没有固定格式，可用\n换行，color为整段消息内容的字体颜色（目前仅支持整段消息为一种颜色）
+    */
+
+
+    sendSubscribe:(openid?,templateId?,url?,miniprogram?,scene?,title?,data?)=>any 
 
     /**
     * 获取客服聊天记录
@@ -4572,6 +4677,59 @@ declare class API {
 
 
     updatePoi:(poi?)=>any 
+
+    /**
+    * 获取小程序二维码，适用于需要的码数量较少的业务场景
+    * https://developers.weixin.qq.com/miniprogram/dev/api/createWXAQRCode.html
+    * Examples:
+    * ```
+    * var path = 'index?foo=bar'; // 小程序页面路径
+    * api.createWXAQRCode(path);
+    * ```
+    * @param {String} path 扫码进入的小程序页面路径，最大长度 128 字节，不能为空
+    * @param {String} width 二维码的宽度，单位 px。最小 280px，最大 1280px
+    */
+
+
+    createWXAQRCode:(path?,width?)=>any 
+
+    /**
+    * 获取小程序码，适用于需要的码数量较少的业务场景
+    * https://developers.weixin.qq.com/miniprogram/dev/api/getWXACode.html
+    * Examples:
+    * ```
+    * var path = 'index?foo=bar'; // 小程序页面路径
+    * api.getWXACode(path);
+    * ```
+    * @param {String} path 扫码进入的小程序页面路径，最大长度 128 字节，不能为空
+    * @param {String} width 二维码的宽度，单位 px。最小 280px，最大 1280px
+    * @param {String} auto_color 自动配置线条颜色，如果颜色依然是黑色，则说明不建议配置主色调
+    * @param {Object} line_color auto_color 为 false 时生效，使用 rgb 设置颜色 例如 {"r":"xxx","g":"xxx","b":"xxx"} 十进制表示
+    * @param {Bool} is_hyaline 是否需要透明底色，为 true 时，生成透明底色的小程序码
+    */
+
+
+    getWXACode:(path?,width?,auto_color?,line_color?,is_hyaline?)=>any 
+
+    /**
+    * 获取小程序码，适用于需要的码数量极多的业务场景
+    * https://developers.weixin.qq.com/miniprogram/dev/api/getWXACodeUnlimit.html
+    * Examples:
+    * ```
+    * var scene = 'foo=bar';
+    * var page = 'pages/index/index'; // 小程序页面路径
+    * api.getWXACodeUnlimit(scene, page);
+    * ```
+    * @param {String} scene 最大32个可见字符，只支持数字，大小写英文以及部分特殊字符：!#//--------//'()*+,/:;=?@-._~，其它字符请自行编码为合法字符（因不支持%，中文无法使用 urlencode 处理，请使用其他编码方式）
+    * @param {String} page 必须是已经发布的小程序存在的页面（否则报错），例如 pages/index/index, 根路径前不要填加 /,不能携带参数（参数请放在scene字段里），如果不填写这个字段，默认跳主页面
+    * @param {String} width 二维码的宽度，单位 px。最小 280px，最大 1280px
+    * @param {String} auto_color 自动配置线条颜色，如果颜色依然是黑色，则说明不建议配置主色调
+    * @param {Object} line_color auto_color 为 false 时生效，使用 rgb 设置颜色 例如 {"r":"xxx","g":"xxx","b":"xxx"} 十进制表示
+    * @param {Bool} is_hyaline 是否需要透明底色，为 true 时，生成透明底色的小程序码
+    */
+
+
+    getWXACodeUnlimit:(scene?,page?,width?,auto_color?,line_color?,is_hyaline?)=>any 
 
 
 

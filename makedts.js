@@ -1,6 +1,7 @@
 const fs = require("fs")
 const files = fs.readdirSync("./lib/")
 const API = require("./index")
+const FunctionParser = require("./fnparams")
 
 const anotation = {};
 
@@ -33,16 +34,8 @@ files.map(file => CalcAnotation(`./lib/${file}`));
 /**获取函数参数 */
 function getParameterName(fn) {
     if (typeof fn !== 'object' && typeof fn !== 'function') return;
-    const COMMENTS = /((\/\/.*$)|(\/\*[\s\S]*?\*\/))/mg;
-    const DEFAULT_PARAMS = /=[^,)]+/mg;
-    const FAT_ARROWS = /=>.*$/mg;
-    let code = fn.prototype ? fn.prototype.constructor.toString() : fn.toString();
-    code = code
-        .replace(COMMENTS, '')
-        .replace(FAT_ARROWS, '')
-        .replace(DEFAULT_PARAMS, '');
-    let result = code.slice(code.indexOf('(') + 1, code.indexOf(')')).match(/([^\s,]+)/g);
-    return result === null ? [] : result;
+    let fp = new FunctionParser(fn);
+    return fp.params.filter(a=>a);
 }
 
 let dtsfile = ""
