@@ -20,7 +20,7 @@
   "dependencies": {
     "formstream": ">=0.0.8",
     "httpx": "^2.1.1",
-    "json-bigint": "^0.3.0"
+    "json-bigint": "^1.0.0"
   },
   "devDependencies": {
     "coveralls": "*",
